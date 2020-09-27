@@ -1,32 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <b-navbar centered fixed-top type="is-primary">
+      <template slot="start">
+        <router-link tag="b-navbar-item" to="/">
+          About
+        </router-link>
+        <router-link tag="b-navbar-item" to="/code">
+          Code
+        </router-link>
+        <router-link tag="b-navbar-item" to="/ink">
+          Ink
+        </router-link>
+      </template>
+    </b-navbar>
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="scss">
+// Set your colors
 
-#nav {
-  padding: 30px;
-}
+$turquoise: #2970FF;
+$blue: #2DD8A3;
+$cyan: #091440;
+$green: #41BE53;
+$yellow: #FFC84E;
+$red: #ED6D47;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+$text: $cyan;
+$link: $turquoise;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>
